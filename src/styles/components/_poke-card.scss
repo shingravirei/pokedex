@@ -1,0 +1,29 @@
+.poke-card {
+    width: 30em;
+    height: 12em;
+    background-color: whitesmoke;
+    margin: 1em;
+    border-radius: 0.5em;
+    transition: ease-in-out 0.25s;
+    padding: 1em;
+}
+
+.poke-card:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+    .poke-img {
+        width: 10em;
+        height: 10em;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
