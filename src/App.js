@@ -1,17 +1,25 @@
-import React, { Suspense, lazy } from 'react';
-import './styles/style.scss';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 
-const HelloWorld = lazy(() => import('./components/HelloWorld'));
+import './styles/style.scss';
+import axios from 'axios';
+const PokeCardList = lazy(() => import('./components/PokeCardList'));
 
 const App = () => {
+    const [pokemons, setPokemons] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get(
+                'https://raw.githubusercontent.com/shingravirei/pokedex-api/master/pokemons.json'
+            )
+            .then((res) => {
+                setPokemons(res.data);
+            });
+    }, []);
+
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <div className={'container'}>
-                <HelloWorld />
-                <HelloWorld />
-                <HelloWorld />
-                <HelloWorld />
-            </div>
+            <PokeCardList pokemons={pokemons} />
         </Suspense>
     );
 };
