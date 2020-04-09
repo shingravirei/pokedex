@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import { useSelector } from 'react-redux';
 
 const Pagination = ({ setPagination }) => {
+    const pokePerPage = 20;
+    const pageCount = useSelector(
+        (state) => Math.ceil(state.reducer.length) / pokePerPage
+    );
+
     return (
         <ReactPaginate
             initialPage={0}
-            pageCount={41}
+            pageCount={pageCount}
             pageRangeDisplayed={3}
             marginPagesDisplayed={1}
             previousLabel={'prev'}
@@ -16,8 +22,8 @@ const Pagination = ({ setPagination }) => {
             pageLinkClassName={'pag-a'}
             onPageChange={({ selected }) => {
                 setPagination({
-                    min: selected * 20,
-                    max: (selected + 1) * 20
+                    min: selected * pokePerPage,
+                    max: (selected + 1) * pokePerPage
                 });
                 window.scrollTo(0, 0);
             }}
