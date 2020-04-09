@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+li {
+    a {
+        background-color: rgba(138, 43, 226, 1);
+        padding: 0.5em;
+        color: whitesmoke;
+    }
+
+    a:hover {
+        cursor: pointer;
+        background-color: rgb(123, 85, 158);
+    }
+}
+
+.pag-a:hover {
+    cursor: pointer;
+}
+
+.pag-active {
+    color: red;
+}

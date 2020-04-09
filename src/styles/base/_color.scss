@@ -1,16 +1,26 @@
-$normal: burlywood;
-$fire: orange;
-$fighting: brown;
-$water: lightseagreen;
-$poison: purple;
-$eletric: yellow;
-// $ground: red;
-$pyschic: violet;
-// $rock: red;
-$ice: lightblue;
-$bug: yellowgreen;
-// $dragon: purple;
-// $ghost: purple;
-// $dark: brown;
-$steel: grey;
-$fairy: pink;
+$colors: (
+    'fire': #ee860f,
+    'grass': #78c850,
+    'poison': #a040a0,
+    'flying': #a890f0,
+    'normal': #a8a878,
+    'fighting': #c03028,
+    'water': #20b2aa,
+    'electric': #f8d030,
+    'ground': #e0c068,
+    'psychic': #ee82ee,
+    'rock': #b8a038,
+    'ice': #add8e6,
+    'bug': #9acd32,
+    'dragon': #7038f8,
+    'ghost': #705898,
+    'dark': #705848,
+    'steel': #808080,
+    'fairy': #ee99ac
+);
+
+@each $type, $color in $colors {
+    .#{$type} {
+        background-color: $color;
+    }
+}

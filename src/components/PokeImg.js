@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
+import { getPokeImgUrl } from '../utils';
 
-// TODO: FIX THIS!!!
 const PokeImg = ({ id }) => {
     const [status, setStatus] = useState('none');
     const [spinnerStatus, setSpinnerStatus] = useState('inline');
     return (
         <>
             <img
-                src={`https://raw.githubusercontent.com/shingravirei/pokedex-api/master/images/${id}.png`}
+                src={getPokeImgUrl(id)}
                 alt={'pokemon'}
                 height={'90px'}
                 style={{ display: status }}
                 onLoad={() => {
-                    console.log(`loaded - ${id}`);
                     setStatus('inline');
                     setSpinnerStatus('none');
                 }}

@@ -1,63 +1,25 @@
 @import 'base/reset';
+@import 'base/color';
 @import 'base/typography';
 @import 'components/poke-card';
+@import 'components/pagination';
+@import 'components/badge';
 
+html {
+    scroll-behavior: smooth;
+}
+
+// temp
 body {
     background-color: tomato;
 }
 
+// temp
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 1em;
-}
-
-.pagination {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    flex-direction: row;
-    width: 30em;
-}
-
-.pag-li {
-    padding: 0.5em;
-    border: 2px solid azure;
-    border-radius: 4px;
-    margin: 2.5px;
-}
-
-.break {
-    padding: 0.5em;
-    border: 2px solid azure;
-    border-radius: 4px;
-    margin: 2.5px;
-}
-
-.pag-a:hover {
-    cursor: pointer;
-}
-
-.pag-active {
-    color: red;
-}
-
-.next,
-.previous {
-    display: flex;
-    align-items: center;
-    padding: 0.5em;
-    border: 2px solid azure;
-    border-radius: 4px;
-    margin: 2.5px;
-}
-
-.next:hover,
-.previous:hover {
-    a {
-        cursor: pointer;
-    }
 }
 
 .spinner {

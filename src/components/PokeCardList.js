@@ -10,12 +10,16 @@ const PokeCardList = ({ pokemons }) => {
     });
 
     return (
-        <div className={'container'}>
+        <>
+            <div className={'container'}>
+                {pokemons
+                    .slice(pagination.min, pagination.max)
+                    .map((pokemon) => (
+                        <PokeCard key={pokemon.id} {...pokemon} />
+                    ))}
+            </div>
             <Pagination setPagination={setPagination} />
-            {pokemons.slice(pagination.min, pagination.max).map((pokemon) => (
-                <PokeCard key={pokemon.id} {...pokemon} />
-            ))}
-        </div>
+        </>
     );
 };
 

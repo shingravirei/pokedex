@@ -19,6 +19,7 @@ const Pagination = ({ setPagination }) => {
                     min: selected * 20,
                     max: (selected + 1) * 20
                 });
+                window.scrollTo(0, 0);
             }}
         />
     );
