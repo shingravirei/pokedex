@@ -1,11 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import ReactPaginate from 'react-paginate';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSliceLimit } from '../store/reducers/pagination';
 
-const Pagination = ({ setPagination }) => {
+const Pagination = () => {
+    const dispatch = useDispatch();
     const pokePerPage = 20;
     const pageCount = useSelector(
-        (state) => Math.ceil(state.reducer.length) / pokePerPage
+        (state) => Math.ceil(state.pokedex.length) / pokePerPage
     );
 
     return (
@@ -21,10 +23,11 @@ const Pagination = ({ setPagination }) => {
             containerClassName={'pagination'}
             pageLinkClassName={'pag-a'}
             onPageChange={({ selected }) => {
-                setPagination({
-                    min: selected * pokePerPage,
-                    max: (selected + 1) * pokePerPage
-                });
+                const lower = selected * pokePerPage;
+                const upper = (selected + 1) * pokePerPage;
+
+                dispatch(setSliceLimit({ lower, upper }));
+
                 window.scrollTo(0, 0);
             }}
         />

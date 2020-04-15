@@ -7,7 +7,7 @@ const fetchPokedex = createAsyncThunk('pokemon/fetchPokedx', async () => {
     return res;
 });
 
-const pokedex = createSlice({
+const pokedexSlice = createSlice({
     name: 'pokedex',
     initialState: [],
     reducers: {},
@@ -16,4 +16,4 @@ const pokedex = createSlice({
     }
 });
 
-export { pokedex, fetchPokedex };
+export { pokedexSlice, fetchPokedex };
