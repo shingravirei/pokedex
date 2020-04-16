@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { fetchPokedex } from './store/reducers/pokedex';
 
 import './styles/style.scss';
+import { SpinnerCircularFixed } from 'spinners-react';
 const PokeCardList = lazy(() => import('./components/PokeCardList'));
 
 const App = () => {
@@ -13,7 +14,16 @@ const App = () => {
     }, [dispatch]);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+            fallback={
+                <SpinnerCircularFixed
+                    color="#000"
+                    size={50}
+                    speed={125}
+                    thickness={100}
+                />
+            }
+        >
             <PokeCardList pokemons />
         </Suspense>
     );

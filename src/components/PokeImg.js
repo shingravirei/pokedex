@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
 import { getPokeImgUrl } from '../utils';
+import { SpinnerCircularFixed } from 'spinners-react';
 
 const PokeImg = ({ id }) => {
-    const [status, setStatus] = useState('none');
-    const [spinnerStatus, setSpinnerStatus] = useState('inline');
+    const [imgLoaded, setImgLoaded] = useState(false);
+
     return (
         <>
             <img
                 src={getPokeImgUrl(id)}
                 alt={'pokemon'}
                 height={'90px'}
-                style={{ display: status }}
+                style={{ display: imgLoaded ? 'block' : 'none' }}
                 onLoad={() => {
-                    setStatus('inline');
-                    setSpinnerStatus('none');
+                    setImgLoaded((prevState) => !prevState);
                 }}
             />
-            <div style={{ display: spinnerStatus }} className={'spinner'}></div>
+            {!imgLoaded && (
+                <SpinnerCircularFixed
+                    color="#ad383a"
+                    size={50}
+                    speed={125}
+                    thickness={100}
+                />
+            )}
         </>
     );
 };
