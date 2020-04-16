@@ -5,7 +5,7 @@ import { setSliceLimit } from '../store/reducers/pagination';
 
 const Pagination = () => {
     const dispatch = useDispatch();
-    const pokePerPage = 20;
+    const pokePerPage = 24;
     const pageCount = useSelector(
         (state) => Math.ceil(state.pokedex.length) / pokePerPage
     );

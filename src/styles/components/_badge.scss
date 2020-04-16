@@ -1,8 +1,9 @@
 .badge {
-    color: white;
+    color: #fdf2f2;
     text-align: center;
     padding: 0.25em 0.5em;
     border-radius: 0.25em;
     margin: 0.25em;
-    text-transform: capitalize;
+    width: 4em;
+    font-size: $font-medium;
 }

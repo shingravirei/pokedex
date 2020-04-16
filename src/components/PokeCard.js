@@ -6,9 +6,9 @@ const PokeCard = ({ id, name, types }) => {
     return (
         <div className={'poke-card'}>
             <div className={'card-content'}>
-                <div>
+                <div className={'card-left'}>
                     <p>#{id}</p>
-                    <p>{name}</p>
+                    <p className={'card-name'}>{name}</p>
                     {types.map((type) => (
                         <p className={`badge ${type}`} key={type}>
                             {type}

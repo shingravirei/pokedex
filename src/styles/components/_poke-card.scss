@@ -1,11 +1,12 @@
 .poke-card {
-    width: 30em;
+    width: 22em;
     height: 12em;
     background-color: whitesmoke;
     margin: 1em;
     border-radius: 0.5em;
     transition: ease-in-out 0.25s;
-    padding: 1em;
+    padding: 1em 2.5em;
+    text-transform: capitalize;
 }
 
 .poke-card:hover {
@@ -26,4 +27,18 @@
         justify-content: center;
         align-items: center;
     }
+}
+
+.card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50;
+}
+
+.card-name {
+    color: rgb(12, 11, 11);
+    font-size: $font-big;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
