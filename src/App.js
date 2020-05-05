@@ -4,7 +4,7 @@ import { fetchPokedex } from './store/reducers/pokedex';
 
 import './styles/style.scss';
 import { SpinnerCircularFixed } from 'spinners-react';
-const PokeCardList = lazy(() => import('./components/PokeCardList'));
+const Router = lazy(() => import('./router'));
 
 const App = () => {
     const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const App = () => {
                 />
             }
         >
-            <PokeCardList pokemons />
+            <Router />
         </Suspense>
     );
 };

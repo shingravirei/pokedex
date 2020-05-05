@@ -1,10 +1,17 @@
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import PokeImg from './PokeImg';
 
 const PokeCard = ({ id, name, types }) => {
+    let history = useHistory();
+
+    const handlePokeLink = () => {
+        history.push(`/${id}`);
+    };
+
     return (
-        <div className={'poke-card'}>
+        <div className={'poke-card'} onClick={handlePokeLink}>
             <div className={'card-content'}>
                 <div className={'card-left'}>
                     <p>#{id}</p>
