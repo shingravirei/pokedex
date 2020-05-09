@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './routes/Home';
 import Pokemon from './routes/Pokemon';
+import Type from './routes/Type';
 
 const RouterComp = () => {
     return (
@@ -11,8 +12,14 @@ const RouterComp = () => {
                 <Switch>
                     <Route exact path="/" render={() => <Home />} />
                     <Route
-                        path="/:id"
+                        path="/pokemon/:id"
                         render={({ match }) => <Pokemon id={match.params.id} />}
+                    />
+                    <Route
+                        path="/type/:type"
+                        render={({ match }) => (
+                            <Type type={match.params.type} />
+                        )}
                     />
                 </Switch>
             </div>

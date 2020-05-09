@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { api } from '../../services';
 
-const fetchPokedex = createAsyncThunk('pokemon/fetchPokedx', async () => {
+const fetchPokedex = createAsyncThunk('pokemon/fetchPokedex', async () => {
     const res = await api.fetchPokedex();
 
     return res;
